@@ -16,7 +16,7 @@ class myThread(threading.Thread):
 if __name__ == '__main__':
     threads = []
 
-    for i in range(21):
+    for i in range(20):
         thread = myThread(i)
         thread.start()
         threads.append(thread)

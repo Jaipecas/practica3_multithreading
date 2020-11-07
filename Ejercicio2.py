@@ -20,7 +20,7 @@ if __name__ == '__main__':
     threadSemaphore = threading.Semaphore(1)
     threads = []
 
-    for i in range(21):
+    for i in range(20):
         thread = myThread(i)
         thread.start()
         threads.append(thread)
