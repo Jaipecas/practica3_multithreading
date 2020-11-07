@@ -22,6 +22,6 @@ if __name__ == '__main__':
         threads.append(thread)
 
     for t in threads:
-     t.join()
+        t.join()
 
-print("Exiting Main Thread")
+print("Saliendo del hilo principal")
