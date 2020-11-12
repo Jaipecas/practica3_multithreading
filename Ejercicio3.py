@@ -8,17 +8,19 @@ class myThread(threading.Thread):
         self.name = name
 
     def run(self):
+        print("Hilo: " + self.name)
+        time.sleep(2)
         threadLock.acquire()
-        time.sleep(1)
         print("Hilo " + self.name + " bebiendo vaso de agua")
-        threadLock.release()
+        time.sleep(1)
         print("Hilo " + self.name + " esta saciado")
+        threadLock.release()
 
 
 if __name__ == '__main__':
     threadLock = threading.Lock()
     threads = []
-
+    print("Hilos esperando para beber: ")
     for i in range(20):
         thread = myThread(i)
         thread.start()

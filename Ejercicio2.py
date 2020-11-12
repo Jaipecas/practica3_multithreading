@@ -8,17 +8,20 @@ class myThread(threading.Thread):
         self.name = name
 
     def run(self):
-        threadSemaphore.acquire()
+        print("Hilo " + self.name)
         time.sleep(3)
+        threadSemaphore.acquire()
         print("Hilo " + self.name + " ha entrado en el tunel")
-        threadSemaphore.release()
         time.sleep(1)
         print("Hilo " + self.name + " ha salido del tunel")
+        threadSemaphore.release()
 
 
 if __name__ == '__main__':
-    threadSemaphore = threading.Semaphore(1)
+    threadSemaphore = threading.Semaphore()
     threads = []
+
+    print("Hilos esperando fuera del tunel: ")
 
     for i in range(20):
         thread = myThread(i)
